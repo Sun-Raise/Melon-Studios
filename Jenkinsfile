@@ -5,6 +5,7 @@ pipeline {
             steps {
                 deleteDir ()
                 echo 'CleanUp Done'
+                  }
             }
         }
 }
