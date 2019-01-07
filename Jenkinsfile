@@ -6,12 +6,6 @@ pipeline {
                 deleteDir ()
                 echo 'CleanUp Done'
                   }
-				      }
-		    stage("Checkout") {
-            steps {
-			    echo 'checkout'
-                checkout scm
-				          }
-              }
+	}    
     }
 }
