@@ -1,19 +1,25 @@
-node {
-    // Clean workspace before doing anything
-    deleteDir()
 
-    try {
-        stage ('Clone') {
-            checkout scm
+pipeline {
+    agent any
+        stage('CheckOut') {
+			steps {
+				echo 'Hi Anand, Welcome to automate pipeline'
+			}
         }
-        stage ('Build') {
-            sh "echo 'shell scripts to build project...'"
+        stage('Compile') {
+			steps {
+			    echo 'Compailing the code'
+			}
         }
-        stage ('Deploy') {
-            sh "echo 'shell scripts to deploy to server...'"
+        stage('test') {
+			steps {
+			    echo 'Testing the code'
+			}
         }
-    } catch (err) {
-        currentBuild.result = 'FAILED'
-        throw err
+        stage('deploy') {
+		    steps {
+			    echo 'Deploying the code'
+			}
+        }
     }
 }
